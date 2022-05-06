@@ -1,7 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 // Default Pages
-import Dashboard from "../views/Dashboard.vue";
+import Dashboard from "@/views/Dashboard.vue";
+import MinerInfo from "@/views/MinerInfo.vue";
+import MinerPaymentInfo from "@/views/MinerPaymentInfo";
+import GeneralInfo from "@/views/GeneralInfo";
 // Component Pages
 import Valert from "../views/components/alert.vue";
 import Vaccrodion from "../views/components/accordion.vue";
@@ -9,7 +12,7 @@ import Vbadges from "../views/components/badges.vue";
 import Vbreadcumb from "../views/components/breadcumbs.vue";
 import Vbutton from "../views/components/button.vue";
 import Vcard from "../views/components/card.vue";
-var appname = " - Windzo Dashboard Admin Template";
+var appname = " - Hellonovo";
 
 const routes = [
   // Routes
@@ -18,6 +21,24 @@ const routes = [
     name: "Dashboard",
     component: Dashboard,
     meta: { title: "Dashboard " + appname },
+  },
+  {
+    path: "/miner-info",
+    name: "Miner's Info",
+    component: MinerInfo,
+    meta: { title: "Miner Info " + appname },
+  },
+  {
+    path: "/miner-payment-info",
+    name: "Miner's Payment Info",
+    component: MinerPaymentInfo,
+    meta: { title: "Miner's Payment Info " + appname },
+  },
+  {
+    path: "/general-info",
+    name: "General Info",
+    component: GeneralInfo,
+    meta: { title: "General Info " + appname },
   },
 
   // Components based Routes
