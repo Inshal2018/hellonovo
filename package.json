@@ -9,7 +9,8 @@
     "windsass": "sass --watch src/assets/sass/app.windzo.scss src/assets/sass/css/windzo.css",
     "require": "npm i -g sass @vue/cli",
     "postinstall": "npm run build",
-    "start": "node server.js"
+    "start": "node server.js",
+    "server": "node server.js"
   },
   "repository": {
     "type": "git",
