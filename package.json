@@ -3,13 +3,13 @@
   "version": "1.0.1",
   "description": "Free Open Source Template Dashboard Admin Vue Tailwind CSS",
   "private": false,
-  "postinstall": "npm run build",
-  "start": "node server.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "windsass": "sass --watch src/assets/sass/app.windzo.scss src/assets/sass/css/windzo.css",
-    "require": "npm i -g sass @vue/cli"
+    "require": "npm i -g sass @vue/cli",
+    "postinstall": "npm run build",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
