@@ -9,8 +9,7 @@
     "windsass": "sass --watch src/assets/sass/app.windzo.scss src/assets/sass/css/windzo.css",
     "require": "npm i -g sass @vue/cli",
     "postinstall": "npm run build",
-    "start": "node server.js",
-    "server": "node server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -30,7 +29,7 @@
     "perfect-scrollbar": "^1.5.5",
     "postcss": "^8",
     "smooth-scrollbar": "^8.7.4",
-    "tailwind": "^4.0.0",
+    "tailwind": "^2.2.0",
     "tailwindcss": "^3",
     "v-tables-3": "^0.4.7",
     "vue": "^3.2.13",
