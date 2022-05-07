@@ -17,7 +17,8 @@ import { createStore } from 'vuex'
 const store = createStore({
   state () {
     return {
-      user_public_key: null,
+      // user_public_key: null,
+      user_public_key: '',
       api_base_url: "http://185.132.38.217:4000",
     }
   },
