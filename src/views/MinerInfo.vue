@@ -32,35 +32,120 @@
     <div class="grid grid-cols-1 gap-2 dark:text-gray-200">
       <div class="card bg-white dark:bg-gray-800 w-full rounded-md p-5 shadow mt-4">
         <h2 class="px-1 py-5 text-2xl">Miner's Information</h2>
-        <div>
-          <p class="my-2">
-            Pending Shares: {{minersInfo.pendingShares}}
-          </p>
-          <p class="my-2">
-            Pending Balance: {{minersInfo.pendingBalance}}
-          </p>
-          <p class="my-2">
-            Total Paid: {{minersInfo.totalPaid}}
-          </p>
-          <p class="my-2">
-            Today Paid: {{minersInfo.todayPaid}}
-          </p>
-          <p class="my-2">
-            Last Payment: {{minersInfo.lastPayment}}
-          </p>
-          <p class="my-2">
-            Last Payment Link: <a :href="minersInfo.lastPaymentLink" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-1 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"> Click to Visit Link </a>
-          </p>
-          <div>
-            Performance Workers :
-          <ul class="ml-14">
-            <li class="border-b-2 my-2 border-t-2" v-for="worker in workers">
-              Hashrate: {{worker.hashrate}}<br>
-              Shares Per Second: {{worker.sharesPerSecond}}
-            </li>
-          </ul>
+        <div class="grid grid-cols-2 gap-2 dark:text-gray-200">
+
+          <div class="card bg-white dark:bg-gray-700 w-full rounded-md p-5 shadow flex" >
+            <div class="p-2 max-w-sm">
+              <div class="bg-orange-200 rounded-full w-14 h-14 text-lg p-3 text-orange-600 mx-auto">
+                <span class="text-3xl"><Icon icon="ant-design:stock-outlined" /></span>
+              </div>
+            </div>
+
+            <div class="block p-2 w-full">
+              <p class="font-semibold text-gray-900 dark:text-gray-200 text-xl"> {{minersInfo.pendingShares}} </p>
+              <h2 class="font-normal text-gray-400 text-md mt-1">Pending Shares</h2>
+            </div>
           </div>
+
+          <div class="card bg-white dark:bg-gray-700 w-full rounded-md p-5 shadow flex">
+            <div class="p-2 max-w-sm">
+              <div class="bg-orange-200 rounded-full w-14 h-14 text-lg p-3 text-orange-600 mx-auto">
+                <span class="text-3xl"><Icon icon="material-symbols:account-balance-wallet" /></span>
+              </div>
+            </div>
+
+            <div class="block p-2 w-full">
+              <p class="font-semibold text-gray-900 dark:text-gray-200 text-xl"> {{minersInfo.pendingBalance}} </p>
+              <h2 class="font-normal text-gray-400 text-md mt-1">Pending Balance</h2>
+            </div>
+          </div>
+
+          <div class="card bg-white dark:bg-gray-700 w-full rounded-md p-5 shadow flex">
+            <div class="p-2 max-w-sm">
+              <div class="bg-orange-200 rounded-full w-14 h-14 text-lg p-3 text-orange-600 mx-auto">
+                <span class="text-3xl"><Icon icon="mdi:account-cash-outline" /></span>
+              </div>
+            </div>
+
+            <div class="block p-2 w-full">
+              <p class="font-semibold text-gray-900 dark:text-gray-200 text-xl"> {{minersInfo.totalPaid}} </p>
+              <h2 class="font-normal text-gray-400 text-md mt-1">Total Paid</h2>
+            </div>
+          </div>
+
+          <div class="card bg-white dark:bg-gray-700 w-full rounded-md p-5 shadow flex">
+            <div class="p-2 max-w-sm">
+              <div class="bg-orange-200 rounded-full w-14 h-14 text-lg p-3 text-orange-600 mx-auto">
+                <span class="text-3xl"><Icon icon="ic:twotone-paid" /></span>
+              </div>
+            </div>
+
+            <div class="block p-2 w-full">
+              <p class="font-semibold text-gray-900 dark:text-gray-200 text-xl"> {{minersInfo.todayPaid}} </p>
+              <h2 class="font-normal text-gray-400 text-md mt-1">Today Paid</h2>
+            </div>
+          </div>
+
+          <div class="card col-span-2 bg-white dark:bg-gray-700 w-full rounded-md p-5 shadow flex" v-if="this.minersInfo.performance">
+            <div class="p-2 max-w-sm">
+              <div class="bg-orange-200 rounded-full w-14 h-14 text-lg p-3 text-orange-600 mx-auto">
+                <span class="text-3xl"><Icon icon="ph:users-four-duotone" /></span>
+              </div>
+            </div>
+
+            <div class="block p-2 w-full">
+              <p class="font-semibold text-gray-900 dark:text-gray-200 text-xl"> {{minersInfo.todayPaid}} </p>
+              <h2 class="font-normal text-gray-400 text-md mt-1">Performance Workers</h2>
+              <ul class="ml-14">
+                <li class="border-b-2 my-2 border-t-2" v-for="worker in workers">
+                  Hashrate: {{worker.hashrate}}<br>
+                  Shares Per Second: {{worker.sharesPerSecond}}
+                </li>
+              </ul>
+              <div>
+                <span v-for="workers in minersInfo.performance">
+                  <ul class="ml-14">
+                    <li class="border-b-2 my-2 border-t-2" v-for="worker in workers.workers">
+                      Hashrate: {{worker.hashrate}}<br>
+                      Shares Per Second: {{worker.sharesPerSecond}} <br>
+                      Created: {{workers.created}}
+                    </li>
+                  </ul>
+                </span>
+                <!--                <span class="border-b-2 my-2 border-t-2" v-for="worker in workers">-->
+                <!--                  Hashrate: {{worker.hashrate}}<br>-->
+                <!--                  Shares Per Second: {{worker.sharesPerSecond}}-->
+                <!--                </span>-->
+              </div>
+            </div>
+          </div>
+
         </div>
+      </div>
+      <div>
+        <h2>Payment Details</h2>
+        <table class="border-collapse w-full border border-slate-400 dark:border-slate-500 bg-white dark:bg-slate-800 text-sm shadow-sm">
+          <thead class="bg-slate-50 dark:bg-slate-700">
+          <tr>
+            <th class="w-1/4 border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Address</th>
+            <th class="w-1/4 border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Amount</th>
+            <th class="w-1/4 border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Transaction Info</th>
+            <th class="w-1/4 border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Created</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr v-for="info in minersPaymentInfo">
+            <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">{{info.address}}</td>
+            <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">{{info.amount}}</td>
+            <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
+              <a
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                 :href="info.transactionInfoLink" target="_blank">Click to Visit</a>
+            </td>
+            <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">{{info.created}}</td>
+          </tr>
+          </tbody>
+        </table>
       </div>
     </div>
     <!-- end wrapper card -->
@@ -88,6 +173,7 @@ export default {
   },
   mounted() {
     this.getMinersInfo();
+    this.getMinersPaymentInfo();
   },
   methods: {
     getMinersInfo() {
@@ -106,12 +192,26 @@ export default {
             console.log(error);
           });
     },
+    getMinersPaymentInfo() {
+      //make axios request to http://185.132.38.217:4000/api/pools/novo/performance to get data and set it to genericInfo
+      var config = {
+        method: 'get',
+        url: 'http://185.132.38.217:4000/api/pools/novo/miners/17X3Pe2KxkofMZoCC3FBxoEE2DdJDxcJan/payments',
+        headers: { }
+      };
+
+      axios(config)
+          .then((response)=> {
+            this.minersPaymentInfo = response.data;
+            // console.log(response.data);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+    },
     getWorkers(obj){
-      // let workers = JSON.stringify(this.minersInfo.performance);
-      // let final = JSON.parse(workers);
       console.log(Object.values(this.minersInfo.performance)[0]);
       this.workers = Object.values(this.minersInfo.performance)[1];
-      // return workers;
     }
   },
 };

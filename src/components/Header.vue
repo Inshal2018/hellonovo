@@ -26,11 +26,11 @@
             />
           </svg>
         </button>
-        <h2
-          class="text-md text-indigo-800 ml-3 lg:block hidden px-5 p-2 rounded-md bg-indigo-200"
-        >
-          Welcome,
-        </h2>
+<!--        <h2-->
+<!--          class="text-md text-indigo-800 ml-3 lg:block hidden px-5 p-2 rounded-md bg-indigo-200"-->
+<!--        >-->
+<!--          Welcome,-->
+<!--        </h2>-->
       </div>
       <div class="mr-5 flex">
         <div

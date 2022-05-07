@@ -48,32 +48,12 @@
         </div>
         <div class="item">
           <router-link
-              to="/general-info"
-              exact
-              class="w-full flex text-left rounded-md box-border p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
-          >
-            <span class="mr-3 text-xl"><Icon icon="ant-design:user-outlined" /></span>
-            <span class="w-full"> General Info </span>
-          </router-link>
-        </div>
-        <div class="item">
-          <router-link
               to="/miner-info"
               exact
               class="w-full flex text-left rounded-md box-border p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
           >
             <span class="mr-3 text-xl"><Icon icon="arcticons:crypto-prices" /></span>
             <span class="w-full"> Miner's Info </span>
-          </router-link>
-        </div>
-        <div class="item">
-          <router-link
-              to="/miner-payment-info"
-              exact
-              class="w-full flex text-left rounded-md box-border p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
-          >
-            <span class="mr-3 text-xl"><Icon icon="material-symbols:payments-outline" /></span>
-            <span class="w-full"> Miner Payment Info </span>
           </router-link>
         </div>
 <!--        <div class="item mt-3">-->

@@ -4,7 +4,6 @@ import { createRouter, createWebHistory } from "vue-router";
 import Dashboard from "@/views/Dashboard.vue";
 import MinerInfo from "@/views/MinerInfo.vue";
 import MinerPaymentInfo from "@/views/MinerPaymentInfo";
-import GeneralInfo from "@/views/GeneralInfo";
 // Component Pages
 import Valert from "../views/components/alert.vue";
 import Vaccrodion from "../views/components/accordion.vue";
@@ -27,18 +26,6 @@ const routes = [
     name: "Miner's Info",
     component: MinerInfo,
     meta: { title: "Miner Info " + appname },
-  },
-  {
-    path: "/miner-payment-info",
-    name: "Miner's Payment Info",
-    component: MinerPaymentInfo,
-    meta: { title: "Miner's Payment Info " + appname },
-  },
-  {
-    path: "/general-info",
-    name: "General Info",
-    component: GeneralInfo,
-    meta: { title: "General Info " + appname },
   },
 
   // Components based Routes
