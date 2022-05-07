@@ -11,10 +11,18 @@ import Vbadges from "../views/components/badges.vue";
 import Vbreadcumb from "../views/components/breadcumbs.vue";
 import Vbutton from "../views/components/button.vue";
 import Vcard from "../views/components/card.vue";
+import Login from "@/views/Login";
+
 var appname = " - Hellonovo";
 
 const routes = [
   // Routes
+  {
+    path: "/login",
+    name: "Login",
+    component: Login,
+    meta: { title: "Login " + appname },
+  },
   {
     path: "/",
     name: "Dashboard",

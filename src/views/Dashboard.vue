@@ -151,12 +151,13 @@ export default {
   mounted() {
     this.getPoolGenericInfo();
     this.getPoolsInfo();
+    console.log(this.$store.state.user_public_key);
   },
   methods: {
     getPoolGenericInfo() {
       var config = {
         method: 'get',
-        url: 'http://185.132.38.217:4000/api/pools/novo/performance',
+        url: this.$store.state.api_base_url+'/api/pools/novo/performance',
         headers: { }
       };
 
@@ -172,7 +173,7 @@ export default {
     getPoolsInfo() {
       var config = {
         method: 'get',
-        url: 'http://185.132.38.217:4000/api/pools',
+        url: this.$store.state.api_base_url+'/api/pools',
         headers: { }
       };
       axios(config)

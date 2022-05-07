@@ -179,7 +179,7 @@ export default {
     getMinersInfo() {
       var config = {
         method: 'get',
-        url: 'http://185.132.38.217:4000/api/pools/novo/miners/17X3Pe2KxkofMZoCC3FBxoEE2DdJDxcJan',
+        url: this.$store.state.api_base_url+'/api/pools/novo/miners/17X3Pe2KxkofMZoCC3FBxoEE2DdJDxcJan',
         headers: { }
       };
       axios(config)
@@ -196,7 +196,7 @@ export default {
       //make axios request to http://185.132.38.217:4000/api/pools/novo/performance to get data and set it to genericInfo
       var config = {
         method: 'get',
-        url: 'http://185.132.38.217:4000/api/pools/novo/miners/17X3Pe2KxkofMZoCC3FBxoEE2DdJDxcJan/payments',
+        url: this.$store.state.api_base_url+'/api/pools/novo/miners/17X3Pe2KxkofMZoCC3FBxoEE2DdJDxcJan/payments',
         headers: { }
       };
 
